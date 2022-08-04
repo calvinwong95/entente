@@ -1,12 +1,13 @@
-import { Box } from "@mui/material";
-
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import LoginPage from "./views/LoginPage";
+import theme from "./theme/theme";
 
 function App() {
   return (
-    <Box className="App">
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <LoginPage />
-    </Box>
+    </ThemeProvider>
   );
 }
 
