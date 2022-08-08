@@ -7,6 +7,12 @@ const UseStyles = makeStyles({
     width: "100vw",
   },
 
+  navbar: {
+    background: "linear-gradient(115deg, #83A4D4 0%, #DCF2FF 100%)",
+    height: "100vh",
+    width: "100vw",
+  },
+
   defaultBackground: {
     background: "linear-gradient(45deg, #83A4D4 0%, #DCF2FF 100%)",
   },

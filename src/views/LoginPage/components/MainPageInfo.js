@@ -37,7 +37,7 @@ const MainPageInfo = () => {
             variant="h1"
             sx={{ fontSize: 34 }}
           >
-            Post.
+            Create.
           </Typography>
           <Typography
             className={classes.whiteFont}

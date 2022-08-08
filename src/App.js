@@ -1,12 +1,12 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import LoginPage from "./views/LoginPage";
+import EntenteRoutes from "./Routes/index.js";
 import theme from "./theme/theme";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <LoginPage />
+      <EntenteRoutes />
     </ThemeProvider>
   );
 }

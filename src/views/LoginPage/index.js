@@ -43,9 +43,9 @@ const LoginPage = () => {
       </Box>
       <MainPageInfo />
       <ReactCardFlip
-        containerStyle={{ backgroundColor: "red" }}
+        containerStyle={{ display: "flex", alignSelf: "center" }}
         isFlipped={isFlipped}
-        flipDirection={"horizontal"}
+        flipDirection={"vertical"}
       >
         <SignInForm handleFlip={handleFlip} />
         <SignUpForm handleFlip={handleFlip} />

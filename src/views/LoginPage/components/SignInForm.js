@@ -3,9 +3,10 @@ import { Box, Typography } from "@mui/material";
 import TenTextField from "../../../components/TenTextField";
 import UseStyles from "../../../hooks/useStyle";
 import TenButton from "../../../components/TenButton";
-
+import { useNavigate } from "react-router-dom";
 const SignInForm = ({ handleFlip }) => {
   const classes = UseStyles();
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -34,6 +35,7 @@ const SignInForm = ({ handleFlip }) => {
           variant="contained"
           color="third-01"
           sxProps={{ height: 45 }}
+          onClick={() => navigate(`/profile`)}
         >
           <Typography className={classes.whiteFont}>Log In</Typography>
         </TenButton>

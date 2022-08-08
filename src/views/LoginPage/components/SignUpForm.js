@@ -1,11 +1,15 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Modal, Typography, Icon } from "@mui/material";
 import TenTextField from "../../../components/TenTextField";
 import UseStyles from "../../../hooks/useStyle";
 import TenButton from "../../../components/TenButton";
 
+//icons
+
 const SignUpForm = ({ handleFlip }) => {
   const classes = UseStyles();
+
+  const [openModal, setOpenModal] = useState(false);
   return (
     <Box
       sx={{
@@ -57,9 +61,48 @@ const SignUpForm = ({ handleFlip }) => {
             variant="contained"
             color="third-01"
             sxProps={{ height: 45 }}
+            onClick={() => setOpenModal(true)}
           >
-            <Typography className={classes.whiteFont}>Log In</Typography>
+            <Typography className={classes.whiteFont}>Sign Up</Typography>
           </TenButton>
+          <Modal open={openModal} onClose={() => setOpenModal(false)}>
+            <Box
+              sx={{
+                width: 400,
+                height: 180,
+                backgroundColor: "white",
+                position: "absolute",
+                top: `calc((100% - 180px )/ 2 )`,
+                left: `calc((100% - 400px) / 2)`,
+                borderRadius: 5,
+                padding: 2,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "space-evenly",
+              }}
+            >
+              <Typography sx={{ textAlign: "center" }} color="third-01.main">
+                Registration Complete
+              </Typography>
+              <Icon sx={{ fontSize: 50, color: "third-01.main" }}>
+                check_circle_outline
+              </Icon>
+              <TenButton
+                fullWidth
+                variant="contained"
+                color="third-01"
+                onClick={() => {
+                  setOpenModal(false);
+                  handleFlip();
+                }}
+              >
+                <Typography className={classes.whiteFont}>
+                  Back to Login Screen
+                </Typography>
+              </TenButton>
+            </Box>
+          </Modal>
         </Box>
       </Box>
     </Box>
