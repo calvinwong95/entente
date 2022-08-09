@@ -4,9 +4,15 @@ const medium = 500;
 
 export const fontLists = [
   {
+    font: "title",
+    size: 250,
+    sizeLg: 250,
+    fontWeight: medium,
+  },
+  {
     font: "h1",
-    size: 40,
-    sizeLg: 40,
+    size: 26,
+    sizeLg: 26,
     fontWeight: medium,
   },
   {

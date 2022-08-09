@@ -34,10 +34,7 @@ const LoginPage = () => {
           zIndex: 1,
         }}
       >
-        <Typography
-          className={classes.glassmorphismTitle}
-          sx={{ fontSize: 250 }}
-        >
+        <Typography className={classes.glassmorphismTitle} variant="title">
           entente
         </Typography>
       </Box>

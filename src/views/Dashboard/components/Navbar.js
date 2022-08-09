@@ -62,7 +62,7 @@ const Navbar = () => {
             variant="contained"
             color="third-01"
             onClick={() => {
-              navigate("/");
+              navigate("/profile");
             }}
           >
             <Typography className={classes.whiteFont}>Profile</Typography>
@@ -72,7 +72,7 @@ const Navbar = () => {
             variant="contained"
             color="third-01"
             onClick={() => {
-              navigate("/profile");
+              navigate("/mypost");
             }}
           >
             <Typography className={classes.whiteFont}>My Post</Typography>
@@ -82,7 +82,7 @@ const Navbar = () => {
             variant="contained"
             color="third-01"
             onClick={() => {
-              navigate("/");
+              navigate("/whatsnew");
             }}
           >
             <Typography className={classes.whiteFont}>What's New</Typography>
@@ -92,7 +92,7 @@ const Navbar = () => {
             variant="contained"
             color="third-01"
             onClick={() => {
-              navigate("/");
+              navigate("/notification");
             }}
           >
             <Typography className={classes.whiteFont}>Notification</Typography>

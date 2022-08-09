@@ -7,7 +7,7 @@ import TenTextField from "../../components/TenTextField";
 import UseStyles from "../../hooks/useStyle";
 import Dashboard from "../Dashboard";
 
-const Profile = () => {
+const Notification = () => {
   const classes = UseStyles();
   const [isEdit, setIsEdit] = useState(false);
   const [openModal, setOpenModal] = useState(false);
@@ -15,7 +15,7 @@ const Profile = () => {
     <Dashboard>
       <Box sx={{ height: "100%" }}>
         <Box sx={{ marginBottom: 3 }}>
-          <Typography variant="h1">Profile</Typography>
+          <Typography variant="h1">Notification</Typography>
         </Box>
 
         <Box
@@ -179,4 +179,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Notification;

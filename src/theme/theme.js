@@ -10,12 +10,12 @@ const theme = createTheme({
 
 fontLists.forEach((item) => {
   return (theme.typography[item.font] = {
-    fontSize: `{item.size}px`,
-    lineHeight: `{item.size * 1.5}px`,
+    fontSize: `${item.size}px`,
+    lineHeight: `${item.size * 1.5}px`,
     fontWeight: item.fontWeight,
     [theme.breakpoints.up("lg")]: {
-      fontSize: "{item.sizeLg}px",
-      lineHeight: "{item.sizeLg * 1.5}px",
+      fontSize: `${item.sizeLg}px`,
+      lineHeight: `${item.sizeLg * 1.5}px`,
     },
   });
 });
