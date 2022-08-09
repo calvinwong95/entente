@@ -19,7 +19,7 @@ const MainPageInfo = () => {
         }}
       >
         <Box>
-          <Typography className={classes.whiteFont} sx={{ fontSize: 64 }}>
+          <Typography className={classes.whiteFont} variant="h1">
             Welcome
           </Typography>
           <Typography className={classes.whiteFont} variant="h2">
