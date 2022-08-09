@@ -10,7 +10,7 @@ const EntenteRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/entente" element={<LoginPage />} />
+        <Route path="/" element={<LoginPage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/mypost" element={<MyPost />} />
         <Route path="/whatsnew" element={<WhatsNew />} />
