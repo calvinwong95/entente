@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import LoginPage from "../views/LoginPage";
 import MyPost from "../views/MyPost";
 import Notification from "../views/Notification";
