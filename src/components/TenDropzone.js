@@ -11,7 +11,7 @@ const TenDropzone = () => {
     height: 100,
     marginTop: 20,
     borderWidth: 2,
-    borderRadius: 2,
+    borderRadius: 10,
     justifyContent: "center",
     borderColor: "#3E4756",
     borderStyle: "dashed",

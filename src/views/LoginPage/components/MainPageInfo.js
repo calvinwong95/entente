@@ -32,25 +32,13 @@ const MainPageInfo = () => {
           >
             3 simple steps
           </Typography>
-          <Typography
-            className={classes.whiteFont}
-            variant="h1"
-            sx={{ fontSize: 34 }}
-          >
+          <Typography className={classes.whiteFont} variant="h1">
             Create.
           </Typography>
-          <Typography
-            className={classes.whiteFont}
-            variant="h1"
-            sx={{ fontSize: 34 }}
-          >
+          <Typography className={classes.whiteFont} variant="h1">
             Connect.
           </Typography>
-          <Typography
-            className={classes.whiteFont}
-            variant="h1"
-            sx={{ fontSize: 34 }}
-          >
+          <Typography className={classes.whiteFont} variant="h1">
             Collaborate.
           </Typography>
         </Box>

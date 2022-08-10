@@ -11,8 +11,8 @@ export const fontLists = [
   },
   {
     font: "h1",
-    size: 26,
-    sizeLg: 26,
+    size: 34,
+    sizeLg: 34,
     fontWeight: medium,
   },
   {
