@@ -101,7 +101,7 @@ const Notification = () => {
     <Dashboard>
       <Box sx={{ height: "100%", paddingBottom: 2 }}>
         <Box sx={{ marginBottom: 3 }}>
-          <Typography variant="h1">Notification</Typography>
+          <Typography variant="h2">Notification</Typography>
         </Box>
         <Box
           sx={{
@@ -127,16 +127,22 @@ const Notification = () => {
         >
           {data?.map((notification) => {
             return (
-              <Accordion>
+              <Accordion className={classes.defaultBackground}>
                 <AccordionSummary expandIcon={<Icon>expand_more_icon</Icon>}>
-                  <Typography>
+                  <Typography className={classes.whiteFont}>
                     {notification.name} wants to collaborate with you!
                   </Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails
+                  sx={{ display: "flex", flexDirection: "column", rowGap: 1 }}
+                >
                   <Box
                     sx={{
                       width: "100%",
+                      height: "15%",
+                      borderRadius: 2,
+                      backgroundColor: "#FFFFFF",
+                      padding: 1,
                     }}
                   >
                     <Typography>{notification.message}</Typography>
@@ -144,6 +150,7 @@ const Notification = () => {
                   <Box
                     sx={{
                       width: "100%",
+
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "flex-end",

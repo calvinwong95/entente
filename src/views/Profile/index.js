@@ -15,7 +15,7 @@ const Profile = () => {
     <Dashboard>
       <Box sx={{ height: "100%" }}>
         <Box sx={{ marginBottom: 3 }}>
-          <Typography variant="h1">Profile</Typography>
+          <Typography variant="h2">Profile</Typography>
         </Box>
 
         <Box

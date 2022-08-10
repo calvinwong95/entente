@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, TextField } from "@mui/material";
 import UseStyles from "../hooks/useStyle";
 
-const TenTextField = ({ label, placeholder, errorMessage, disabled }) => {
+const TenTextField = ({ label, placeholder, errorMessage, disabled, rows }) => {
   const classes = UseStyles();
   return (
     <Box
@@ -19,6 +19,8 @@ const TenTextField = ({ label, placeholder, errorMessage, disabled }) => {
         size="small"
         placeholder={placeholder}
         disabled={disabled}
+        multiline
+        rows={rows}
       ></TextField>
       {errorMessage && (
         <Typography className={classes.errorFont}>{errorMessage}</Typography>
