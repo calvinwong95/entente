@@ -3,8 +3,10 @@ import { makeStyles } from "@mui/styles";
 const UseStyles = makeStyles({
   root: {
     background: "linear-gradient(45deg, #83A4D4 0%, #DCF2FF 100%)",
+    boxSizing: "border-box",
     height: "100vh",
     width: "100vw",
+    margin: 0,
   },
 
   navbar: {

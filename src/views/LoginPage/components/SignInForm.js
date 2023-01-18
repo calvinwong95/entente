@@ -4,6 +4,7 @@ import TenTextField from "../../../components/TenTextField";
 import UseStyles from "../../../hooks/useStyle";
 import TenButton from "../../../components/TenButton";
 import { useNavigate } from "react-router-dom";
+import { Formik, Form } from "formik";
 const SignInForm = ({ handleFlip }) => {
   const classes = UseStyles();
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const SignInForm = ({ handleFlip }) => {
         className={classes.glassmorphism}
         sx={{
           width: 450,
-          height: 400,
+          height: "100%",
           marginTop: 3.5,
           padding: 2,
           display: "flex",
@@ -29,22 +30,22 @@ const SignInForm = ({ handleFlip }) => {
           borderRadius: 5,
         }}
       >
-        <TenTextField label="Username" />
-        <TenTextField label="Password" />
-        <TenButton
-          variant="contained"
-          color="third-01"
-          sxProps={{ height: 45 }}
-          onClick={() => navigate(`/profile`)}
-        >
-          <Typography className={classes.whiteFont}>Log In</Typography>
-        </TenButton>
-        <Typography align="center">Or</Typography>
-        <TenButton variant="outlined" color="third-01" sxProps={{ height: 45 }}>
-          <Box>
-            <Typography color="third-01">Log In With Google</Typography>
-          </Box>
-        </TenButton>
+        {/* Formik Starts Here */}
+        <Formik>
+          <Form>
+            <TenTextField label="Username" />
+            <TenTextField label="Password" />
+            <TenButton
+              variant="contained"
+              color="third-01"
+              sxProps={{ height: 45 }}
+              onClick={() => navigate(`/profile`)}
+            >
+              <Typography className={classes.whiteFont}>Log In</Typography>
+            </TenButton>
+          </Form>
+        </Formik>
+
         {/*Dont have account */}
         <Box sx={{ display: "flex", flexDirection: "row", columnGap: 1 }}>
           <Typography variant="body1" sx={{ fontSize: 14 }}>

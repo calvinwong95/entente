@@ -19,14 +19,13 @@ const LoginPage = () => {
       className={classes.root}
       sx={{
         position: "relative",
-        paddingX: 20,
-        paddingY: 7.5,
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
+        backgroundColor: "red",
       }}
     >
-      <Box
+      {/* <Box
         sx={{
           position: "absolute",
           top: -110,
@@ -37,8 +36,8 @@ const LoginPage = () => {
         <Typography className={classes.glassmorphismTitle} variant="title">
           entente
         </Typography>
-      </Box>
-      <MainPageInfo />
+      </Box> */}
+      {/* <MainPageInfo />
       <ReactCardFlip
         containerStyle={{ display: "flex", alignSelf: "center" }}
         isFlipped={isFlipped}
@@ -46,7 +45,7 @@ const LoginPage = () => {
       >
         <SignInForm handleFlip={handleFlip} />
         <SignUpForm handleFlip={handleFlip} />
-      </ReactCardFlip>
+      </ReactCardFlip> */}
     </Box>
   );
 };
