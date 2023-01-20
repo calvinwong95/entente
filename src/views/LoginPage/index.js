@@ -15,37 +15,48 @@ const LoginPage = () => {
     setIsFlipped(!isFlipped);
   };
   return (
-    <Box
-      className={classes.root}
-      sx={{
-        position: "relative",
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        backgroundColor: "red",
-      }}
-    >
-      {/* <Box
+    <Box className={classes.masterRoot}>
+      <Box
+        className={classes.root}
         sx={{
-          position: "absolute",
-          top: -110,
-          left: -20,
-          zIndex: 1,
+          display: "flex",
+          flexDirection: "row",
         }}
       >
-        <Typography className={classes.glassmorphismTitle} variant="title">
-          entente
-        </Typography>
-      </Box> */}
-      {/* <MainPageInfo />
-      <ReactCardFlip
-        containerStyle={{ display: "flex", alignSelf: "center" }}
-        isFlipped={isFlipped}
-        flipDirection={"vertical"}
-      >
-        <SignInForm handleFlip={handleFlip} />
-        <SignUpForm handleFlip={handleFlip} />
-      </ReactCardFlip> */}
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignSelf: "center",
+          }}
+        >
+          <Typography className={classes.glassmorphismTitle} variant="title">
+            entente
+          </Typography>
+          <MainPageInfo />
+        </Box>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <ReactCardFlip
+            containerStyle={{
+              display: "flex",
+              alignSelf: "center",
+            }}
+            isFlipped={isFlipped}
+            flipDirection={"vertical"}
+          >
+            <SignInForm handleFlip={handleFlip} />
+            <SignUpForm handleFlip={handleFlip} />
+          </ReactCardFlip>
+        </Box>
+      </Box>
     </Box>
   );
 };

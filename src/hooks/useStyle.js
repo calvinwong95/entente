@@ -1,12 +1,19 @@
+import { AutofpsSelect } from "@mui/icons-material";
 import { makeStyles } from "@mui/styles";
 
 const UseStyles = makeStyles({
-  root: {
+  masterRoot: {
     background: "linear-gradient(45deg, #83A4D4 0%, #DCF2FF 100%)",
     boxSizing: "border-box",
+    width: "100%",
     height: "100vh",
-    width: "100vw",
-    margin: 0,
+    minWidth: "1300px",
+  },
+
+  root: {
+    margin: "auto",
+    maxWidth: "1300px",
+    minWidth: "1024px",
   },
 
   navbar: {
@@ -35,7 +42,6 @@ const UseStyles = makeStyles({
   },
   errorFont: {
     color: "#FF0000",
-    fontSize: 12,
   },
 });
 

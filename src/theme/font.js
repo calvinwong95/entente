@@ -5,8 +5,8 @@ const medium = 500;
 export const fontLists = [
   {
     font: "title",
-    size: 250,
-    sizeLg: 250,
+    size: 130,
+    sizeLg: 200,
     fontWeight: medium,
   },
   {

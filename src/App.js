@@ -1,13 +1,16 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import EntenteRoutes from "./Routes/index.js";
 import theme from "./theme/theme";
+import { GlobalProvider } from "./context/GlobalContext.js";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <EntenteRoutes />
-    </ThemeProvider>
+    <GlobalProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <EntenteRoutes />
+      </ThemeProvider>
+    </GlobalProvider>
   );
 }
 

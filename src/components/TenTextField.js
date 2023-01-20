@@ -1,8 +1,8 @@
 import React from "react";
-import { Box, Typography, TextField } from "@mui/material";
+import { Box, Typography, TextField, InputBase } from "@mui/material";
 import UseStyles from "../hooks/useStyle";
 
-const TenTextField = ({ label, placeholder, errorMessage, disabled, rows }) => {
+const TenTextField = ({ label, errorMessage, ...props }) => {
   const classes = UseStyles();
   return (
     <Box
@@ -14,16 +14,11 @@ const TenTextField = ({ label, placeholder, errorMessage, disabled, rows }) => {
       }}
     >
       <Typography variant="h4">{label}</Typography>
-      <TextField
-        fullWidth
-        size="small"
-        placeholder={placeholder}
-        disabled={disabled}
-        multiline
-        rows={rows}
-      ></TextField>
+      <TextField fullWidth size="small" {...props} />
       {errorMessage && (
-        <Typography className={classes.errorFont}>{errorMessage}</Typography>
+        <Typography variant="subtitle2" className={classes.errorFont}>
+          {errorMessage}
+        </Typography>
       )}
     </Box>
   );
