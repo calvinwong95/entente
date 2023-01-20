@@ -8,6 +8,7 @@ const UseStyles = makeStyles({
     width: "100%",
     height: "100vh",
     minWidth: "1300px",
+    overflow: "hidden",
   },
 
   root: {
