@@ -1,7 +1,7 @@
-import { FormControl, MenuItem, Select } from "@mui/material";
+import { FormControl, Typography, Select } from "@mui/material";
 import React, { useState } from "react";
 
-const TenDropdown = ({ children, disabled }) => {
+const TenDropdown = ({ label, children, disabled }) => {
   const [age, setAge] = useState("");
 
   const handleChange = (e) => {
@@ -9,6 +9,7 @@ const TenDropdown = ({ children, disabled }) => {
   };
   return (
     <FormControl fullWidth>
+      <Typography variant="h4">{label}</Typography>
       <Select
         id="category"
         value={age}

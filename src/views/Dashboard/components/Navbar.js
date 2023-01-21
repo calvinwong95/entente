@@ -55,6 +55,7 @@ const Navbar = () => {
             flexDirection: "column",
             rowGap: 2,
             width: "100%",
+            mb: 5,
           }}
         >
           <TenButton

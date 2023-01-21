@@ -16,45 +16,47 @@ const LoginPage = () => {
   };
   return (
     <Box className={classes.masterRoot}>
-      <Box
-        className={classes.root}
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-        }}
-      >
+      <Box className={classes.root}>
         <Box
           sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignSelf: "center",
-          }}
-        >
-          <Typography className={classes.glassmorphismTitle} variant="title">
-            entente
-          </Typography>
-          <MainPageInfo />
-        </Box>
-        <Box
-          sx={{
-            width: "100%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <ReactCardFlip
-            containerStyle={{
+          <Box
+            sx={{
+              width: "100%",
               display: "flex",
+              flexDirection: "column",
               alignSelf: "center",
             }}
-            isFlipped={isFlipped}
-            flipDirection={"vertical"}
           >
-            <SignInForm handleFlip={handleFlip} />
-            <SignUpForm handleFlip={handleFlip} />
-          </ReactCardFlip>
+            <Typography className={classes.glassmorphismTitle} variant="title">
+              entente
+            </Typography>
+            <MainPageInfo />
+          </Box>
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <ReactCardFlip
+              containerStyle={{
+                display: "flex",
+                alignSelf: "center",
+              }}
+              isFlipped={isFlipped}
+              flipDirection={"vertical"}
+            >
+              <SignInForm handleFlip={handleFlip} />
+              <SignUpForm handleFlip={handleFlip} />
+            </ReactCardFlip>
+          </Box>
         </Box>
       </Box>
     </Box>

@@ -9,39 +9,31 @@ const Dashboard = ({ children }) => {
   const classes = UseStyles();
 
   return (
-    <Box
-      className={classes.root}
-      sx={{
-        position: "relative",
-        paddingX: 20,
-        paddingY: 5,
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-      }}
-    >
-      <Box
-        className={classes.glassmorphism}
-        sx={{
-          width: "100%",
-          height: "100%",
-          borderRadius: 5,
-          display: "flex",
-          flexDirection: "row",
-        }}
-      >
-        <Navbar />
+    <Box className={classes.masterRoot}>
+      <Box className={classes.root}>
         <Box
+          className={classes.glassmorphism}
           sx={{
-            width: "85%",
+            width: "100%",
             height: "100%",
-            borderTopRightRadius: 20,
-            borderBottomRightRadius: 20,
-
-            padding: 4,
+            borderRadius: 5,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "flex-start",
           }}
         >
-          {children}
+          <Navbar />
+          <Box
+            sx={{
+              width: "100%",
+              height: "100%",
+              borderTopRightRadius: 5,
+              borderBottomRightRadius: 5,
+              p: 4,
+            }}
+          >
+            {children}
+          </Box>
         </Box>
       </Box>
     </Box>

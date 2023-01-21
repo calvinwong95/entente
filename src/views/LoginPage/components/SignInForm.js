@@ -57,8 +57,8 @@ const SignInForm = ({ handleFlip }) => {
       >
         <Formik
           initialValues={{
-            username: "",
-            password: "",
+            username: "wongcheehoe123",
+            password: "wongcheehoe123",
           }}
           validationSchema={Yup.object({
             username: Yup.string().required("A username is required"),

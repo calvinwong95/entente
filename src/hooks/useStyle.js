@@ -1,4 +1,3 @@
-import { AutofpsSelect } from "@mui/icons-material";
 import { makeStyles } from "@mui/styles";
 
 const UseStyles = makeStyles({
@@ -7,20 +6,25 @@ const UseStyles = makeStyles({
     boxSizing: "border-box",
     width: "100%",
     height: "100vh",
-    minWidth: "1300px",
     overflow: "hidden",
   },
 
   root: {
-    margin: "auto",
-    maxWidth: "1300px",
+    // overflow: "hidden",
+    margin: "0 auto",
+    height: "100vh",
+    maxWidth: "1200px",
     minWidth: "1024px",
+    minHeight: "724px",
+    paddingTop: "60px",
+    paddingBottom: "60px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 
   navbar: {
     background: "linear-gradient(115deg, #83A4D4 0%, #DCF2FF 100%)",
-    height: "100vh",
-    width: "100vw",
   },
 
   defaultBackground: {
