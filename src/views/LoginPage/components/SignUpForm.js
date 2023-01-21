@@ -55,8 +55,10 @@ const SignUpForm = ({ handleFlip }) => {
             username: "",
             password: "",
             confirm_password: "",
+            category: "default",
             email: "",
             phone_number: "",
+            company_image: "",
           }}
           validationSchema={Yup.object({
             username: Yup.string()

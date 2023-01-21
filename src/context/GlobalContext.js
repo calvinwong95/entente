@@ -8,6 +8,10 @@ export const GlobalProvider = ({ children }) => {
   const [userData, setUserData] = useState({
     username: "wongcheehoe123",
     password: "wongcheehoe123",
+    category: "default",
+    email: "wongcheehoe@gmail.com",
+    phone_number: "019-5302012",
+    company_image: null,
   });
   //login Error
   const [loginError, setLoginError] = useState(false);
