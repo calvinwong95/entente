@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React, { useState } from "react";
 import UseStyles from "../../hooks/useStyle";
 import Dashboard from "../Dashboard";
+import DisplaySettings from "./components/DisplaySettings";
 import ProfileSettings from "./components/ProfileSettings";
 
 const Profile = () => {
@@ -32,17 +33,7 @@ const Profile = () => {
           }}
         >
           <ProfileSettings />
-          <Box
-            sx={{
-              width: "100%",
-              height: "100%",
-              backgroundColor: "#FFFFFF",
-              borderRadius: 2.5,
-              padding: 2,
-            }}
-          >
-            <Typography variant="h3">Display Post Settings</Typography>
-          </Box>
+          <DisplaySettings />
         </Box>
       </Box>
     </Dashboard>

@@ -8,10 +8,15 @@ export const GlobalProvider = ({ children }) => {
   const [userData, setUserData] = useState({
     username: "wongcheehoe123",
     password: "wongcheehoe123",
-    category: "default",
+    category: "Engineering",
     email: "wongcheehoe@gmail.com",
     phone_number: "019-5302012",
     company_image: null,
+  });
+  //company display data
+  const [displayData, setDisplayData] = useState({
+    company_name: "",
+    broadcast_message: "",
   });
   //login Error
   const [loginError, setLoginError] = useState(false);
@@ -30,6 +35,8 @@ export const GlobalProvider = ({ children }) => {
         setLoginError,
         passwordResetSent,
         setPasswordResetSent,
+        displayData,
+        setDisplayData,
       }}
     >
       {children}

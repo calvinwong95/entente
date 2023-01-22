@@ -25,6 +25,7 @@ const ProfileSettings = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isEditProfile, setIsEditProfile] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [category, setCategory] = useState(userData?.category);
   const handleEditProfile = () => {
     if (isEditProfile) {
       setIsEditProfile(false);
@@ -34,6 +35,9 @@ const ProfileSettings = () => {
   };
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
+  };
+  const handleSetCategory = (event) => {
+    setCategory(event.target.value);
   };
 
   //   console.log(userData);
@@ -82,12 +86,11 @@ const ProfileSettings = () => {
             )
             .required("A phone number is required"),
         })}
-        onSubmit={(values, { resetForm }) => {
+        onSubmit={(values) => {
           setLoading(true);
           setTimeout(() => {
-            console.log(JSON.stringify(values, null, 2));
+            alert(JSON.stringify(values, null, 2));
             setUserData(values);
-            resetForm();
             handleEditProfile();
             setLoading(false);
             setOpenModal(true);
@@ -101,6 +104,7 @@ const ProfileSettings = () => {
           handleChange,
           handleBlur,
           handleSubmit,
+          setFieldValue,
           resetForm,
         }) => (
           <Form style={{ width: "100%", height: "100%" }}>
@@ -155,13 +159,14 @@ const ProfileSettings = () => {
                 <TenDropdown
                   label="Category"
                   disabled
-                  initialValue={userData?.category}
+                  value={userData?.category}
                 >
                   <MenuItem value="default">Please select a category</MenuItem>
                   <MenuItem value={"Food"}>Food</MenuItem>
                   <MenuItem value={"Electronics"}>Electronics</MenuItem>
                   <MenuItem value={"Engineering"}>Engineering</MenuItem>
                 </TenDropdown>
+
                 <TenTextField
                   label="Email Addresss"
                   disabled
@@ -248,12 +253,21 @@ const ProfileSettings = () => {
                   }}
                   errorMessage={<ErrorMessage name="password" />}
                 />
-                <TenDropdown label="Category" initialValue={userData?.category}>
+                <Field
+                  as={TenDropdown}
+                  name="category"
+                  label="Category"
+                  value={category}
+                  onChange={(e) => {
+                    handleSetCategory(e);
+                    setFieldValue("category", e.target.value);
+                  }}
+                >
                   <MenuItem value="default">Please select a category</MenuItem>
                   <MenuItem value={"Food"}>Food</MenuItem>
                   <MenuItem value={"Electronics"}>Electronics</MenuItem>
                   <MenuItem value={"Engineering"}>Engineering</MenuItem>
-                </TenDropdown>
+                </Field>
                 <Field
                   component={TenTextField}
                   fullWidth
