@@ -15,12 +15,18 @@ const DisplaySettings = () => {
     useContext(GlobalContext);
   const [isEditProfile, setIsEditProfile] = useState(false);
   const [displayActive, setDisplayActive] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
+  const [openSettingModal, setOpenSettingModal] = useState(false);
   const [openDisplayModal, setOpenDisplayModal] = useState(false);
+  const [openCancelModal, setOpenCancelModal] = useState(false);
 
   const handleEditProfile = () => {
     if (isEditProfile) {
-      setIsEditProfile(false);
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        setIsEditProfile(false);
+        setOpenCancelModal(false);
+      }, 1000);
     } else {
       setIsEditProfile(true);
     }
@@ -28,6 +34,11 @@ const DisplaySettings = () => {
 
   const handleSwitch = () => {
     setOpenDisplayModal(true);
+  };
+
+  const switchConfirm = () => {
+    setDisplayActive(!displayActive);
+    setOpenDisplayModal(false);
   };
 
   //   console.log(userData);
@@ -59,7 +70,7 @@ const DisplaySettings = () => {
             setDisplayData(values);
             setLoading(false);
             handleEditProfile();
-            setOpenModal(true);
+            setOpenSettingModal(false);
           }, 1500);
         }}
       >
@@ -197,7 +208,7 @@ const DisplaySettings = () => {
                   <TenButton
                     variant="outlined"
                     color="third-01"
-                    onClick={handleEditProfile}
+                    onClick={() => setOpenCancelModal(true)}
                   >
                     <Typography sx={{ color: "third-01" }}>Cancel</Typography>
                   </TenButton>
@@ -205,22 +216,41 @@ const DisplaySettings = () => {
                     loading={loading}
                     variant="contained"
                     color="third-01"
-                    onClick={handleSubmit}
+                    onClick={() => setOpenSettingModal(true)}
                   >
                     <Typography className={classes.whiteFont}>Save</Typography>
                   </TenButton>
                 </Box>
               )}
             </Box>
+            {/* Switch Modal */}
+            <TenModal
+              open={openDisplayModal}
+              onClose={() => setOpenDisplayModal(false)}
+              message="Your post display will be seen by other companies depending on whether
+        you have switch on the display."
+              confirmFunction={switchConfirm}
+            />
+            {/* Display Settings Modal */}
+            <TenModal
+              open={openSettingModal}
+              onClose={() => setOpenSettingModal(false)}
+              loading={loading}
+              message="The changes provided will be added accordingly."
+              confirmFunction={handleSubmit}
+            />
+            {/*Cancel Display Settings Modal */}
+            <TenModal
+              open={openCancelModal}
+              onClose={() => setOpenCancelModal(false)}
+              loading={loading}
+              title="Are you sure you want to cancel?"
+              message="The changes made will not be saved if you cancel."
+              confirmFunction={handleEditProfile}
+            />
           </Form>
         )}
       </Formik>
-
-      {/* Switch Modal */}
-      <TenModal
-        open={openDisplayModal}
-        onClose={() => setOpenDisplayModal(false)}
-      />
     </Box>
   );
 };

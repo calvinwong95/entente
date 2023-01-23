@@ -17,6 +17,7 @@ import { GlobalContext } from "../../../context/GlobalContext";
 import { Form, Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import TenModal from "../../../components/TenModal";
 
 const ProfileSettings = () => {
   const classes = UseStyles();
@@ -24,11 +25,17 @@ const ProfileSettings = () => {
     useContext(GlobalContext);
   const [showPassword, setShowPassword] = useState(false);
   const [isEditProfile, setIsEditProfile] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
+  const [openSettingModal, setOpenSettingModal] = useState(false);
+  const [openCancelModal, setOpenCancelModal] = useState(false);
   const [category, setCategory] = useState(userData?.category);
   const handleEditProfile = () => {
     if (isEditProfile) {
-      setIsEditProfile(false);
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        setIsEditProfile(false);
+        setOpenCancelModal(false);
+      }, 1000);
     } else {
       setIsEditProfile(true);
     }
@@ -91,9 +98,10 @@ const ProfileSettings = () => {
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
             setUserData(values);
-            handleEditProfile();
+
             setLoading(false);
-            setOpenModal(true);
+            handleEditProfile();
+            setOpenSettingModal(false);
           }, 1500);
         }}
       >
@@ -318,7 +326,7 @@ const ProfileSettings = () => {
                   <TenButton
                     variant="outlined"
                     color="third-01"
-                    onClick={handleEditProfile}
+                    onClick={() => setOpenCancelModal(true)}
                   >
                     <Typography sx={{ color: "third-01" }}>Cancel</Typography>
                   </TenButton>
@@ -326,13 +334,30 @@ const ProfileSettings = () => {
                     loading={loading}
                     variant="contained"
                     color="third-01"
-                    onClick={handleSubmit}
+                    onClick={() => setOpenSettingModal(true)}
                   >
                     <Typography className={classes.whiteFont}>Save</Typography>
                   </TenButton>
                 </Box>
               )}
             </Box>
+            {/* Profile Settings Modal */}
+            <TenModal
+              open={openSettingModal}
+              onClose={() => setOpenSettingModal(false)}
+              loading={loading}
+              message="The changes provided will be added accordingly."
+              confirmFunction={handleSubmit}
+            />
+            {/*Cancel Display Settings Modal */}
+            <TenModal
+              open={openCancelModal}
+              onClose={() => setOpenCancelModal(false)}
+              loading={loading}
+              title="Are you sure you want to cancel?"
+              message="The changes made will not be saved if you cancel."
+              confirmFunction={handleEditProfile}
+            />
           </Form>
         )}
       </Formik>
