@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 
 const TenFileUploadProgressBar = ({ file }) => {
   useEffect(() => {}, []);
+  console.log({ file });
   return <Box>Test</Box>;
 };
 
