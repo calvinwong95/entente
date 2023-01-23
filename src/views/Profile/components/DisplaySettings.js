@@ -1,30 +1,22 @@
-import {
-  Box,
-  MenuItem,
-  Modal,
-  Typography,
-  InputAdornment,
-  IconButton,
-  Switch,
-} from "@mui/material";
+import { Box, Typography, Switch, Modal } from "@mui/material";
 import React, { useState, useContext } from "react";
 import TenButton from "../../../components/TenButton";
-import TenDropdown from "../../../components/TenDropdown";
-import TenDropzone from "../../../components/TenDropzone";
+
 import TenTextField from "../../../components/TenTextField";
 import UseStyles from "../../../hooks/useStyle";
 import { AccountCircle } from "@mui/icons-material";
 import { GlobalContext } from "../../../context/GlobalContext";
 import { Form, Formik, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import TenModal from "../../../components/TenModal";
 
 const DisplaySettings = () => {
   const classes = UseStyles();
   const { loading, setLoading, displayData, setDisplayData } =
     useContext(GlobalContext);
   const [isEditProfile, setIsEditProfile] = useState(false);
+  const [displayActive, setDisplayActive] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [openDisplayModal, setOpenDisplayModal] = useState(false);
 
   const handleEditProfile = () => {
     if (isEditProfile) {
@@ -32,6 +24,10 @@ const DisplaySettings = () => {
     } else {
       setIsEditProfile(true);
     }
+  };
+
+  const handleSwitch = () => {
+    setOpenDisplayModal(true);
   };
 
   //   console.log(userData);
@@ -143,6 +139,7 @@ const DisplaySettings = () => {
                   value={values?.company_name}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  charLimit={30}
                 />
                 <Field
                   component={TenTextField}
@@ -156,6 +153,7 @@ const DisplaySettings = () => {
                   maxRows={4}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  charLimit={150}
                 />
               </Box>
             )}
@@ -172,7 +170,11 @@ const DisplaySettings = () => {
                 >
                   <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Typography variant="h4">Display: </Typography>
-                    <Switch />
+                    <Switch
+                      checked={displayActive}
+                      onChange={handleSwitch}
+                      disableRipple
+                    />
                   </Box>
 
                   <TenButton
@@ -213,6 +215,12 @@ const DisplaySettings = () => {
           </Form>
         )}
       </Formik>
+
+      {/* Switch Modal */}
+      <TenModal
+        open={openDisplayModal}
+        onClose={() => setOpenDisplayModal(false)}
+      />
     </Box>
   );
 };
