@@ -68,16 +68,7 @@ const Navbar = () => {
           >
             <Typography className={classes.whiteFont}>Profile</Typography>
           </TenButton>
-          <TenButton
-            fullWidth
-            variant="contained"
-            color="third-01"
-            onClick={() => {
-              navigate("/mypost");
-            }}
-          >
-            <Typography className={classes.whiteFont}>My Post</Typography>
-          </TenButton>
+
           <TenButton
             fullWidth
             variant="contained"
