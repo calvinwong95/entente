@@ -15,7 +15,7 @@ const UseStyles = makeStyles({
     height: "100vh",
     maxWidth: "1200px",
     minWidth: "1024px",
-    minHeight: "724px",
+    minHeight: "600px",
     paddingTop: "60px",
     paddingBottom: "60px",
     display: "flex",
