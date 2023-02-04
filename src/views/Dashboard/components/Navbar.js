@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import TenButton from "../../../components/TenButton";
 
-const Navbar = () => {
+const Navbar = ({ company_name }) => {
   const classes = UseStyles();
   const navigate = useNavigate();
   return (
@@ -47,7 +47,7 @@ const Navbar = () => {
           color="third-01.main"
           sx={{ marginTop: 1, marginBottom: 1 }}
         >
-          Invoke Sdn Bhd
+          {company_name || "New User"}
         </Typography>
         <Box
           sx={{
@@ -88,6 +88,16 @@ const Navbar = () => {
             }}
           >
             <Typography className={classes.whiteFont}>Notification</Typography>
+          </TenButton>
+          <TenButton
+            fullWidth
+            variant="contained"
+            color="third-01"
+            onClick={() => {
+              navigate("/admin");
+            }}
+          >
+            <Typography className={classes.whiteFont}>Admin</Typography>
           </TenButton>
         </Box>
       </Box>
