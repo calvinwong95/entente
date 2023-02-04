@@ -30,7 +30,7 @@ const Notification = () => {
       company_id: 126,
       company_name: "Maybank Sdn. Bhd.",
       message:
-        "I would like to collaborate and fund your event. Please contact me whenever you're available.",
+        "I would like to collaborate and fund your event. Please contact me whenever you're available. My email address is abc@gmail.com and my contact number is 012-3029102",
     },
     {
       company_id: 127,
