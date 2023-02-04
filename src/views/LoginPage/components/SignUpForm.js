@@ -86,7 +86,6 @@ const SignUpForm = ({ handleFlip }) => {
           onSubmit={(values, { resetForm }) => {
             setLoading(true);
             setTimeout(() => {
-              console.log(JSON.stringify(values, null, 2));
               setUserData(values);
               resetForm();
               setLoading(false);

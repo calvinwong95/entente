@@ -66,7 +66,7 @@ const DisplaySettings = () => {
         onSubmit={(values) => {
           setLoading(true);
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
             setDisplayData(values);
             setLoading(false);
             handleEditProfile();
